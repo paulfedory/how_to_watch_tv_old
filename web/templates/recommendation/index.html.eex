@@ -1,0 +1,32 @@
+<h2>Listing recommendations</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Reason</th>
+      <th>Description</th>
+      <th>Image url</th>
+      <th>Thumbnail url</th>
+      <th>Source data</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for recommendation <- @recommendations do %>
+    <tr>
+      <td><%= recommendation.name %></td>
+      <td><%= recommendation.reason %></td>
+      <td><%= recommendation.description %></td>
+      <td><%= recommendation.image_url %></td>
+      <td><%= recommendation.thumbnail_url %></td>
+      <td><%= recommendation.source_data %></td>
+
+      <td class="text-right">
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+

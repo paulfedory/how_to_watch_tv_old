@@ -16,7 +16,7 @@ defmodule HowToWatchTv.Router do
   scope "/", HowToWatchTv do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", RecommendationController, :index
   end
 
   # Other scopes may use custom stacks.
