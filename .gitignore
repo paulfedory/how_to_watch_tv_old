@@ -2,7 +2,7 @@
 /_build
 /db
 /deps
-/*.ez
+*.swp
 
 # Generated on crash by the VM
 erl_crash.dump
