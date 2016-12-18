@@ -11,25 +11,32 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
-  <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
+  <body class="is-loading-0 is-loading-1 is-loading-2">
+    <!-- Main -->
+    <div id="main">
+
+      <!-- Header -->
+      <header id="header">
+        <h1>How To Watch TV</h1>
+        <p>Curated TV recommendations by <a href="http://paulfedory.com">Paul Fedory</a></p>
+        <ul class="icons">
+          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+          <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        </ul>
       </header>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <%= render @view_module, @view_template, assigns %>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div> <!-- /container -->
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="copyright">
+          <li>&copy; Paul Fedory.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+        </ul>
+      </footer>
+    </div>
+    <!-- Scripts -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
