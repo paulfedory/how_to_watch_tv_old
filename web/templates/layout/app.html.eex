@@ -18,13 +18,11 @@
       <!-- Header -->
       <header id="header">
         <h1>How To Watch TV</h1>
-        <p>Curated TV recommendations by <a href="http://paulfedory.com">Paul Fedory</a></p>
-        <ul class="icons">
-          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-          <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-          <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-        </ul>
+        <p>
+          Curated TV recommendations by
+          <br />
+          <a href="http://paulfedory.com">Paul Fedory</a>
+        </p>
       </header>
 
       <%= render @view_module, @view_template, assigns %>
@@ -32,7 +30,15 @@
       <!-- Footer -->
       <footer id="footer">
         <ul class="copyright">
-          <li>&copy; Paul Fedory.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+          <li>&copy; Paul Fedory.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+          <li>
+            Images and descriptions from
+            <a href="http://thetvdb.com">theTVDB.com</a>, licensed under a
+            <a href="http://creativecommons.org/licenses/by-nc/4.0/">
+              Creative Commons Attribution-NonCommercial 4.0 International License
+            </a>
+          </li>
         </ul>
       </footer>
     </div>
