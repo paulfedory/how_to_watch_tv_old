@@ -7,6 +7,7 @@ defmodule HowToWatchTv.Recommendation do
     field :description, :string
     field :image_url, :string
     field :thumbnail_url, :string
+    field :tvdb_id, :string
     field :source_data, :map
 
     timestamps()

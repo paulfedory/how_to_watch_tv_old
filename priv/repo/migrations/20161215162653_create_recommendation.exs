@@ -8,6 +8,7 @@ defmodule HowToWatchTv.Repo.Migrations.CreateRecommendation do
       add :description, :text
       add :image_url, :string
       add :thumbnail_url, :string
+      add :tvdb_id, :string
       add :source_data, :map
 
       timestamps()
