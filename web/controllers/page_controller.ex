@@ -1,7 +1,10 @@
 defmodule HowToWatchTv.PageController do
   use HowToWatchTv.Web, :controller
 
+  alias HowToWatchTv.Recommendation
+
   def index(conn, _params) do
-    render conn, "index.html"
+    recommendations = Repo.all(Recommendation)
+    render(conn, "index.html", recommendations: recommendations)
   end
 end
