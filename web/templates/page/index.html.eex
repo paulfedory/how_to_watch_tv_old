@@ -4,8 +4,8 @@
     <article>
       <a class="thumbnail" href="<%= recommendation.image_url %>"><img src="<%= recommendation.thumbnail_url %>" alt="" /></a>
       <h2><%= recommendation.name %></h2>
-      <p><em>Summary:</em> <%= recommendation.description %></p>
-      <p><em>Why You Should Watch:</em> <%= recommendation.reason %></p>
+      <p><%= recommendation.description %></p>
+      <p><em>Why you should watch:</em> <%= recommendation.reason %></p>
     </article>
   <% end %>
 </section>
