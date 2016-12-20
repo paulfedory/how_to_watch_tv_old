@@ -4,11 +4,8 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>TVDB ID</th>
       <th>Reason</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Thumbnail url</th>
-      <th>Source data</th>
 
       <th></th>
     </tr>
@@ -17,11 +14,8 @@
 <%= for recommendation <- @recommendations do %>
     <tr>
       <td><%= recommendation.name %></td>
+      <td><%= recommendation.tvdb_id %></td>
       <td><%= recommendation.reason %></td>
-      <td><%= recommendation.description %></td>
-      <td><%= recommendation.image_url %></td>
-      <td><%= recommendation.thumbnail_url %></td>
-      <td><%= recommendation.source_data %></td>
 
       <td class="text-right">
         <%= link "Show", to: recommendation_path(@conn, :show, recommendation), class: "btn btn-default btn-xs" %>
