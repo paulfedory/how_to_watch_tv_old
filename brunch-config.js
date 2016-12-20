@@ -20,7 +20,10 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: "css/app.css",
+      joinTo: {
+        'css/app.css': /^(web\/static\/css\/app)/,
+        'css/admin.css': /^(web\/static\/css\/admin)/
+      },
       order: {
         after: ["web/static/css/app.css"] // concat app.css last
       }

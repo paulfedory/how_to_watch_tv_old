@@ -13,10 +13,19 @@ defmodule HowToWatchTv.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :admin_layout do
+    plug :put_layout, {HowToWatchTv.LayoutView, :admin}
+  end
+
   scope "/", HowToWatchTv do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+  end
+
+  scope "/admin", HowToWatchTv do
+    pipe_through [:browser, :admin_layout]
+    resources "/recommendations", RecommendationController
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,38 @@
+<h2>Show recommendation</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @recommendation.name %>
+  </li>
+
+  <li>
+    <strong>Reason:</strong>
+    <%= @recommendation.reason %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @recommendation.description %>
+  </li>
+
+  <li>
+    <strong>Image url:</strong>
+    <%= @recommendation.image_url %>
+  </li>
+
+  <li>
+    <strong>Thumbnail url:</strong>
+    <%= @recommendation.thumbnail_url %>
+  </li>
+
+  <li>
+    <strong>Source data:</strong>
+    <%= @recommendation.source_data %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: recommendation_path(@conn, :edit, @recommendation) %>
+<%= link "Back", to: recommendation_path(@conn, :index) %>
