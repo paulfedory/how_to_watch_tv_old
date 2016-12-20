@@ -1085,16 +1085,16 @@
     }
 
       #viewer .slide .caption {
-        background-image: -moz-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-        background-image: -webkit-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-        background-image: -ms-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-        background-image: linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
+        background-image: -moz-linear-gradient(bottom, rgba(16,16,16,1), rgba(16,16,16,0.7) 70%, rgba(16,16,16,0));
+        background-image: -webkit-linear-gradient(bottom, rgba(16,16,16,1), rgba(16,16,16,0.7) 70%, rgba(16,16,16,0));
+        background-image: -ms-linear-gradient(bottom, rgba(16,16,16,1), rgba(16,16,16,0.7) 70%, rgba(16,16,16,0));
+        background-image: linear-gradient(bottom, rgba(16,16,16,1), rgba(16,16,16,0.7) 70%, rgba(16,16,16,0));
         padding: 2em 2em 0.75em 2em ;
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
-        color: rgba(255, 255, 255, 0.5);
+        color: #AAA;
         z-index: 1;
       }
 
