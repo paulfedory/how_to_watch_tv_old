@@ -18,7 +18,7 @@ defmodule HowToWatchTv.Recommendation do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :reason, :description, :image_url, :thumbnail_url, :source_data])
-    |> validate_required([:name, :reason, :description, :image_url, :thumbnail_url, :source_data])
+    |> cast(params, [:name, :tvdb_id, :reason, :description, :image_url, :thumbnail_url, :source_data])
+    |> validate_required([:name, :tvdb_id])
   end
 end

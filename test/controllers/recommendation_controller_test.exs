@@ -2,7 +2,7 @@ defmodule HowToWatchTv.RecommendationControllerTest do
   use HowToWatchTv.ConnCase
 
   alias HowToWatchTv.Recommendation
-  @valid_attrs %{description: "some content", image_url: "some content", name: "some content", reason: "some content", source_data: %{}, thumbnail_url: "some content"}
+  @valid_attrs %{name: "some content", tvdb_id: "some content"}
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do

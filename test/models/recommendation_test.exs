@@ -3,7 +3,7 @@ defmodule HowToWatchTv.RecommendationTest do
 
   alias HowToWatchTv.Recommendation
 
-  @valid_attrs %{description: "some content", image_url: "some content", name: "some content", reason: "some content", source_data: %{}, thumbnail_url: "some content"}
+  @valid_attrs %{name: "some content", tvdb_id: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
