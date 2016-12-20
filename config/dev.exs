@@ -41,3 +41,7 @@ config :how_to_watch_tv, HowToWatchTv.Repo,
   database: "how_to_watch_tv_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :how_to_watch_tv, BasicAuth,
+  username: "user",
+  password: "secret"

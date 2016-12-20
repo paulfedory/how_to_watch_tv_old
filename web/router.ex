@@ -15,6 +15,7 @@ defmodule HowToWatchTv.Router do
 
   pipeline :admin_layout do
     plug :put_layout, {HowToWatchTv.LayoutView, :admin}
+    plug BasicAuth, Application.fetch_env!(:how_to_watch_tv, BasicAuth)
   end
 
   scope "/", HowToWatchTv do

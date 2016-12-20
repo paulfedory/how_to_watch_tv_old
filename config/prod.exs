@@ -29,6 +29,11 @@ config :how_to_watch_tv, HowToWatchTv.Repo,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Config for basic auth
+config :how_to_watch_tv, BasicAuth,
+  username: System.get_env("AUTH_USERNAME"),
+  password: System.get_env("AUTH_PASSWORD")
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

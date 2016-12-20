@@ -17,3 +17,7 @@ config :how_to_watch_tv, HowToWatchTv.Repo,
   database: "how_to_watch_tv_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :how_to_watch_tv, BasicAuth,
+  username: "user",
+  password: "secret"
