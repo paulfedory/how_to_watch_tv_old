@@ -1,17 +1,11 @@
 defmodule BasicAuth do
   import Plug.Conn
-  require Logger
 
   @realm "Basic realm=\"How To Watch TV Admin\""
 
   def init(opts), do: opts
 
   def call(conn, [username: username, password: password]) do
-    Logger.info "username: #{username}"
-    Logger.info System.get_env("AUTH_USERNAME")
-    Logger.info "password: #{password}"
-    Logger.info System.get_env("AUTH_PASSWORD")
-    Logger.info encode(username, password)
     case get_req_header(conn, "authorization") do
       ["Basic " <> auth] ->
         if auth == encode(username, password) do
