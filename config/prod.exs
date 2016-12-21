@@ -26,13 +26,16 @@ config :how_to_watch_tv, HowToWatchTv.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
 
-# Do not print debug messages in production
-config :logger, level: :info
-
 # Config for basic auth
 config :how_to_watch_tv, BasicAuth,
   username: System.get_env("AUTH_USERNAME"),
   password: System.get_env("AUTH_PASSWORD")
+
+# Do not print debug messages in production
+config :logger, level: :info
+
+# Config for ExTV TVDB API
+config :extv, tvdb_api_key: System.get_env("TVDB_API_KEY")
 
 # ## SSL Support
 #
