@@ -4,9 +4,7 @@ defmodule BasicAuth do
 
   @realm "Basic realm=\"How To Watch TV Admin\""
 
-  def init(_) do
-    Application.fetch_env!(:how_to_watch_tv, BasicAuth)
-  end
+  def init(opts), do: opts
 
   def call(conn, [username: username, password: password]) do
     Logger.info "username: #{username}"
