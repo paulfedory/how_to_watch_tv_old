@@ -1,5 +1,6 @@
 defmodule HowToWatchTv.RecommendationControllerTest do
   use HowToWatchTv.ConnCase
+  import Mock
 
   alias HowToWatchTv.Recommendation
   @valid_attrs %{name: "some content", tvdb_id: "some content"}
@@ -35,9 +36,11 @@ defmodule HowToWatchTv.RecommendationControllerTest do
     end
 
     test "creates resource and redirects when data is valid", %{conn: conn} do
-      conn = post conn, recommendation_path(conn, :create), recommendation: @valid_attrs
-      assert redirected_to(conn) == recommendation_path(conn, :index)
-      assert Repo.get_by(Recommendation, @valid_attrs)
+      with_mock HowToWatchTv.RecommendationParams, [fetch_tvdb_info: fn(_) -> @valid_attrs end] do
+        conn = post conn, recommendation_path(conn, :create), recommendation: @valid_attrs
+        assert redirected_to(conn) == recommendation_path(conn, :index)
+        assert Repo.get_by(Recommendation, @valid_attrs)
+      end
     end
 
     test "does not create resource and renders errors when data is invalid", %{conn: conn} do
