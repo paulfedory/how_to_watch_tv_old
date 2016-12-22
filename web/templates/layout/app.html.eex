@@ -9,7 +9,7 @@
 
     <title>How To Watch TV: Curated TV Recommendations</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Unica+One|Vollkorn:400,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Unica+One|Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 

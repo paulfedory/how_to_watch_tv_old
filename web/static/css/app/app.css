@@ -115,7 +115,7 @@
   }
 
   body, input, select, textarea {
-    font-family: "Vollkorn", serif;
+    font-family: "Source Sans Pro", serif;
     font-weight: 400;
     line-height: 1.65;
     font-size: 1em;
@@ -165,7 +165,7 @@
     }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
   }
 
   h3 {
