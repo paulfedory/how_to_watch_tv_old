@@ -15,12 +15,12 @@ alias HowToWatchTv.Recommendation
 Repo.delete_all(Recommendation)
 
 Repo.insert! %Recommendation{
-  name: "The OA",
-  tvdb_id: "321060",
-  description: "Prairie Johnson, blind as a child, comes home to the community she grew up in with her sight restored. Some hail her a miracle, others a dangerous mystery, but Prairie won’t talk with the FBI or her parents about the seven years she went missing.",
-  reason: "The sort of navel-gazing, contemplative sci-fi I expect from its creators Brit Marling and Zal Batmanglij, \"The OA\" left me thinking about death and wondering if the mysterious plotholes even matter to the bigger story being told.",
-  image_url: "https://thetvdb.com/banners/fanart/original/321060-4.jpg",
-  thumbnail_url: "https://thetvdb.com/banners/_cache/fanart/original/321060-4.jpg"
+  name: "Search Party",
+  tvdb_id: "309523",
+  description: "Search Party is a dark comedy about four self-absorbed twenty-somethings who become entangled in an ominous mystery. When a former college acquaintance suddenly disappears, it's time to form a Search Party.",
+  reason: "The way \"Search Party\" plays with tone is fantastic: I found myself laughing at the selfish millenials and yet I was invested in the mystery at the centre of the story.",
+  image_url: "https://thetvdb.com/banners/fanart/original/309523-3.jpg",
+  thumbnail_url: "https://thetvdb.com/banners/_cache/fanart/original/309523-3.jpg"
 }
 
 Repo.insert! %Recommendation{
@@ -42,10 +42,11 @@ Repo.insert! %Recommendation{
 }
 
 Repo.insert! %Recommendation{
-  name: "Search Party",
-  tvdb_id: "309523",
-  description: "Search Party is a dark comedy about four self-absorbed twenty-somethings who become entangled in an ominous mystery. When a former college acquaintance suddenly disappears, it's time to form a Search Party.",
-  reason: "The way \"Search Party\" plays with tone is fantastic: I found myself laughing at the selfish millenials and yet I was invested in the mystery at the centre of the story.",
-  image_url: "https://thetvdb.com/banners/fanart/original/309523-3.jpg",
-  thumbnail_url: "https://thetvdb.com/banners/_cache/fanart/original/309523-3.jpg"
+  name: "The OA",
+  tvdb_id: "321060",
+  description: "Prairie Johnson, blind as a child, comes home to the community she grew up in with her sight restored. Some hail her a miracle, others a dangerous mystery, but Prairie won’t talk with the FBI or her parents about the seven years she went missing.",
+  reason: "The sort of navel-gazing, contemplative sci-fi I expect from its creators Brit Marling and Zal Batmanglij, \"The OA\" left me thinking about death and wondering if the mysterious plotholes even matter to the bigger story being told.",
+  image_url: "https://thetvdb.com/banners/fanart/original/321060-4.jpg",
+  thumbnail_url: "https://thetvdb.com/banners/_cache/fanart/original/321060-4.jpg"
 }
+

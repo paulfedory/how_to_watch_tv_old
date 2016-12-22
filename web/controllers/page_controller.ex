@@ -4,7 +4,8 @@ defmodule HowToWatchTv.PageController do
   alias HowToWatchTv.Recommendation
 
   def index(conn, _params) do
-    recommendations = Repo.all(Recommendation)
+    query = from(r in Recommendation, order_by: [desc: r.updated_at])
+    recommendations = Repo.all(query)
     render(conn, "index.html", recommendations: recommendations)
   end
 end
