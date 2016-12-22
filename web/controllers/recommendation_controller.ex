@@ -2,6 +2,7 @@ defmodule HowToWatchTv.RecommendationController do
   use HowToWatchTv.Web, :controller
 
   alias HowToWatchTv.Recommendation
+  alias HowToWatchTv.RecommendationParams
 
   def index(conn, _params) do
     recommendations = Repo.all(Recommendation)
@@ -14,7 +15,8 @@ defmodule HowToWatchTv.RecommendationController do
   end
 
   def create(conn, %{"recommendation" => recommendation_params}) do
-    changeset = Recommendation.changeset(%Recommendation{}, recommendation_params)
+    updated_params = RecommendationParams.fetch_tvdb_info(recommendation_params)
+    changeset = Recommendation.changeset(%Recommendation{}, updated_params)
 
     case Repo.insert(changeset) do
       {:ok, _recommendation} ->
