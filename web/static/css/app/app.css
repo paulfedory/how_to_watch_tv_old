@@ -1089,7 +1089,7 @@
         background-image: -webkit-linear-gradient(bottom, rgba(16,16,16,1), rgba(16,16,16,0.7) 70%, rgba(16,16,16,0));
         background-image: -ms-linear-gradient(bottom, rgba(16,16,16,1), rgba(16,16,16,0.7) 70%, rgba(16,16,16,0));
         background-image: linear-gradient(bottom, rgba(16,16,16,1), rgba(16,16,16,0.7) 70%, rgba(16,16,16,0));
-        padding: 2em 2em 0.75em 2em ;
+        padding: 2em 5.5em 0.75em 5.5em ;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -1100,6 +1100,10 @@
 
         #viewer .slide .caption h2, #viewer .slide .caption h3, #viewer .slide .caption h4, #viewer .slide .caption h5, #viewer .slide .caption h6 {
           color: #fff;
+        }
+
+        #viewer .slide .caption p {
+          max-width: 36em;
         }
 
       #viewer .slide .image {
@@ -1230,6 +1234,18 @@
         #viewer .inner .toggle {
           background-image: url("images/close-small.svg") !important;
           background-size: 32px 32px;
+        }
+
+        #viewer .inner .nav-next, #viewer .inner .nav-previous {
+          width: 4em;
+        }
+
+        #viewer .slide .caption {
+          padding: 2em 4em 0.75em 4em;
+        }
+
+        #viewer .slide .caption p {
+          max-width: 100%;
         }
 
         body.fullscreen #viewer {
