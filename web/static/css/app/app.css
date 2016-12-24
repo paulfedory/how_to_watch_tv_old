@@ -738,7 +738,7 @@
       background-repeat: no-repeat;
       background-size: 32px 32px;
       cursor: pointer;
-      display: none;
+      display: block;
       z-index: 1;
       background-position: 0.5em 0.5em;
       left: 0;
@@ -1044,6 +1044,7 @@
         z-index: 1;
         right: 0;
         background-position: calc(100% - 0.75em) 0.75em;
+        display: none;
       }
 
       #viewer .inner .nav-next,
@@ -1162,6 +1163,7 @@
 
       body.fullscreen #viewer .inner .toggle {
         background-image: url("images/open.svg");
+        display: block;
       }
 
     body.is-loading-1 #viewer {
