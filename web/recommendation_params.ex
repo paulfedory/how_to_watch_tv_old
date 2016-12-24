@@ -11,7 +11,7 @@ defmodule HowToWatchTv.RecommendationParams do
   end
   def fetch_tvdb_info(params), do: params
 
-defp fetch_general_info(id) do
+  defp fetch_general_info(id) do
     id
       |> ExTV.Series.by_id
       |> Map.get("data")
