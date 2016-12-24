@@ -9,7 +9,7 @@
 
     <title>How To Watch TV: Curated TV Recommendations</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Unica+One|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:200,200i,600,900" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -19,11 +19,11 @@
 
       <!-- Header -->
       <header id="header">
-        <h1>How To Watch TV</h1>
+        <h1>How To<br />Watch TV</h1>
         <p>
           Curated TV recommendations
           <br />
-          from <a href="https://twitter.com/paulfedory">Paul Fedory <i class="fa fa-twitter"></i></a>
+          from Paul Fedory <a href="https://twitter.com/paulfedory"><i class="fa fa-twitter"></i></a>
         </p>
       </header>
 
