@@ -1,5 +1,8 @@
 # HowToWatchTv
 
+Make sure to [get a TVDB API key](http://thetvdb.com/?tab=apiregister) and add it to `config/dev.secret.exs`
+or in production, an environment variable called `TVDB_API_KEY`
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
