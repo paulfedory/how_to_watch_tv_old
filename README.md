@@ -1,4 +1,4 @@
-# HowToWatchTv
+# HowToWatchTv [![Build Status](https://travis-ci.org/paulfedory/how_to_watch_tv.svg?branch=master)](https://travis-ci.org/paulfedory/how_to_watch_tv)
 
 Make sure to [get a TVDB API key](http://thetvdb.com/?tab=apiregister) and add it to `config/dev.secret.exs`
 or in production, an environment variable called `TVDB_API_KEY`
