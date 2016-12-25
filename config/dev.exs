@@ -46,6 +46,3 @@ config :how_to_watch_tv, BasicAuth,
   username: "user",
   password: "secret"
 
-# Finally import the config/dev.secret.exs
-# which should be versioned separately.
-import_config "dev.secret.exs"
