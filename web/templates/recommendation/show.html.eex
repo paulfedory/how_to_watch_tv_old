@@ -41,12 +41,6 @@
     <strong>Updated at:</strong>
     <%= @recommendation.updated_at %>
   </li>
-
-  <li>
-    <strong>Source data:</strong>
-    <%= @recommendation.source_data %>
-  </li>
-
 </ul>
 
 <%= link "Edit", to: recommendation_path(@conn, :edit, @recommendation) %>

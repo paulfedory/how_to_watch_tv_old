@@ -8,7 +8,7 @@ defmodule HowToWatchTv.Recommendation do
     field :image_url, :string
     field :thumbnail_url, :string
     field :tvdb_id, :string
-    field :source_data, :map
+    field :image_binary, :binary
 
     timestamps()
   end
@@ -18,7 +18,7 @@ defmodule HowToWatchTv.Recommendation do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :tvdb_id, :reason, :description, :image_url, :thumbnail_url, :source_data])
+    |> cast(params, [:name, :tvdb_id, :reason, :description, :image_url, :thumbnail_url, :image_binary])
     |> validate_required([:name, :tvdb_id])
   end
 end
