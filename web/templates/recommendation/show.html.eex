@@ -3,6 +3,10 @@
 <ul>
 
   <li>
+    <strong>ID:</strong>
+    <%= @recommendation.id %>
+  </li>
+  <li>
     <strong>Name:</strong>
     <%= @recommendation.name %>
   </li>

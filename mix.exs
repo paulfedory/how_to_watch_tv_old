@@ -39,6 +39,7 @@ defmodule HowToWatchTv.Mixfile do
      {:gettext, "~> 0.11"},
      {:mock, "~> 0.2.0", only: :test},
      {:extv, "~> 0.2.0"},
+     {:httpoison, "~> 0.10"},
      {:cowboy, "~> 1.0"}]
   end
 

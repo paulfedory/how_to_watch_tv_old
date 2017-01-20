@@ -3,7 +3,7 @@ defmodule HowToWatchTv.RecommendationControllerTest do
   import Mock
 
   alias HowToWatchTv.Recommendation
-  @valid_attrs %{name: "some content", tvdb_id: "some content"}
+  @valid_attrs %{"name" => "some content", "tvdb_id" => "some content"}
   @invalid_attrs %{}
 
   test "GET / without authorization header should throw 401", %{conn: conn} do
@@ -36,16 +36,24 @@ defmodule HowToWatchTv.RecommendationControllerTest do
     end
 
     test "creates resource and redirects when data is valid", %{conn: conn} do
-      with_mock HowToWatchTv.RecommendationParams, [fetch_tvdb_info: fn(_) -> @valid_attrs end] do
+      with_mocks([
+        {HowToWatchTv.RecommendationParams, [], [fetch_tvdb_info: fn(_) -> @valid_attrs end]},
+        {HTTPoison, [], [get!: fn(_) -> %HTTPoison.Response{body: ""} end]}
+      ]) do
         conn = post conn, recommendation_path(conn, :create), recommendation: @valid_attrs
+        atomized_attrs = for {key, val} <- @valid_attrs, into: %{}, do: {String.to_atom(key), val}
         assert redirected_to(conn) == recommendation_path(conn, :index)
-        assert Repo.get_by(Recommendation, @valid_attrs)
+        assert Repo.get_by(Recommendation, atomized_attrs)
       end
     end
 
     test "does not create resource and renders errors when data is invalid", %{conn: conn} do
-      conn = post conn, recommendation_path(conn, :create), recommendation: @invalid_attrs
-      assert html_response(conn, 200) =~ "New recommendation"
+      with_mocks([
+        {HTTPoison, [], [get!: fn(_) -> %HTTPoison.Response{body: ""} end]}
+      ]) do
+        conn = post conn, recommendation_path(conn, :create), recommendation: @invalid_attrs
+        assert html_response(conn, 200) =~ "New recommendation"
+      end
     end
 
     test "shows chosen resource", %{conn: conn} do
@@ -69,8 +77,9 @@ defmodule HowToWatchTv.RecommendationControllerTest do
     test "updates chosen resource and redirects when data is valid", %{conn: conn} do
       recommendation = Repo.insert! %Recommendation{}
       conn = put conn, recommendation_path(conn, :update, recommendation), recommendation: @valid_attrs
+      atomized_attrs = for {key, val} <- @valid_attrs, into: %{}, do: {String.to_atom(key), val}
       assert redirected_to(conn) == recommendation_path(conn, :show, recommendation)
-      assert Repo.get_by(Recommendation, @valid_attrs)
+      assert Repo.get_by(Recommendation, atomized_attrs)
     end
 
     test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do

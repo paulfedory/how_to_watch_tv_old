@@ -2,7 +2,9 @@
 <section id="thumbnails">
   <%= for recommendation <- @recommendations do %>
     <article>
-      <a class="thumbnail" href="<%= recommendation.image_url %>"><img src="<%= recommendation.thumbnail_url %>" alt="" /></a>
+      <a class="thumbnail" href="<%= page_path(@conn, :image, recommendation.id) %>">
+        <img src="<%= page_path(@conn, :thumbnail, recommendation.id) %>" alt="<%= recommendation.name %>" />
+      </a>
       <h2><%= recommendation.name %></h2>
       <p><%= recommendation.description %></p>
       <h3>Why I've recommended it:</h3>
