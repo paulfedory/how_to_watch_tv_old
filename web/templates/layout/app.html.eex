@@ -4,8 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Curated TV Recommendations from Paul Fedory">
+    <meta name="author" content="Paul Fedory">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@paulfedory" />
+    <meta name="twitter:creator" content="@paulfedory" />
+    <meta property="og:url" content="<%= static_url(@conn, "/" ) %>" />
+    <meta property="og:title" content="How To Watch TV" />
+    <meta property="og:description" content="Curated TV recommendations from Paul Fedory" />
+    <meta property="og:image" content="<%= static_url(@conn, "/images/screenshot.jpg") %>" />
 
     <title>How To Watch TV</title>
 
