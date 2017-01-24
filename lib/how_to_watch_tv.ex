@@ -12,6 +12,7 @@ defmodule HowToWatchTv do
       supervisor(HowToWatchTv.Repo, []),
       # Start the endpoint when the application starts
       supervisor(HowToWatchTv.Endpoint, []),
+      worker(HowToWatchTv.ImageFetcher, []),
       # Start your own worker by calling: HowToWatchTv.Worker.start_link(arg1, arg2, arg3)
       # worker(HowToWatchTv.Worker, [arg1, arg2, arg3]),
     ]

@@ -3,6 +3,7 @@ defmodule HowToWatchTv.RecommendationController do
 
   alias HowToWatchTv.Recommendation
   alias HowToWatchTv.RecommendationParams
+  alias HowToWatchTv.ImageFetcher
 
   def index(conn, _params) do
     recommendations = Repo.all(Recommendation)
@@ -16,15 +17,12 @@ defmodule HowToWatchTv.RecommendationController do
 
   def create(conn, %{"recommendation" => recommendation_params}) do
     updated_params = RecommendationParams.fetch_tvdb_info(recommendation_params)
-    %HTTPoison.Response{body: image} = HTTPoison.get!(updated_params["image_url"])
-    %HTTPoison.Response{body: thumbnail} = HTTPoison.get!(updated_params["thumbnail_url"])
-    imaged_params = updated_params
-    |> Map.put("image_binary", image)
-    |> Map.put("thumbnail_binary", thumbnail)
-    changeset = Recommendation.changeset(%Recommendation{}, imaged_params)
+    changeset = Recommendation.changeset(%Recommendation{}, updated_params)
 
     case Repo.insert(changeset) do
-      {:ok, _recommendation} ->
+      {:ok, recommendation} ->
+        ImageFetcher.get_image(:image, recommendation)
+        ImageFetcher.get_image(:thumbnail, recommendation)
         conn
         |> put_flash(:info, "Recommendation created successfully.")
         |> redirect(to: recommendation_path(conn, :index))
