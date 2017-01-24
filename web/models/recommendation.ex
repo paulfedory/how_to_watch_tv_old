@@ -31,4 +31,8 @@ defmodule HowToWatchTv.Recommendation do
       ])
     |> validate_required([:name, :tvdb_id])
   end
+
+  def format_date(datetime) do
+    Timex.format!(datetime, "%B %e, %Y", :strftime)
+  end
 end

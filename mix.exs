@@ -19,7 +19,7 @@ defmodule HowToWatchTv.Mixfile do
   def application do
     [mod: {HowToWatchTv, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :extv]]
+                    :phoenix_ecto, :postgrex, :extv, :timex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,6 +40,7 @@ defmodule HowToWatchTv.Mixfile do
      {:mock, "~> 0.2.0", only: :test},
      {:extv, "~> 0.2.0"},
      {:httpoison, "~> 0.10"},
+     {:timex, "~> 3.1"},
      {:cowboy, "~> 1.0"}]
   end
 

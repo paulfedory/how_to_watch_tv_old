@@ -6,7 +6,12 @@ defmodule HowToWatchTv.PageController do
   def index(conn, _params) do
     query = from(r in Recommendation, order_by: [desc: r.updated_at])
     recommendations = Repo.all(query)
-    render(conn, "index.html", recommendations: recommendations)
+    [most_recent | _] = recommendations
+    last_updated = Recommendation.format_date(most_recent.updated_at)
+    render(conn, "index.html",
+      recommendations: recommendations,
+      last_updated: last_updated,
+    )
   end
 
   def image(conn, %{"id_ext" => id}) do

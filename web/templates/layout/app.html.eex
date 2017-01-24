@@ -40,6 +40,7 @@
 
       <!-- Footer -->
       <footer id="footer">
+        <p>Last updated: <%= @last_updated %>.</p>
         <ul class="copyright">
           <li>&copy; Paul Fedory.</li>
           <li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
@@ -47,7 +48,7 @@
             Images and descriptions from
             <a href="http://thetvdb.com">theTVDB.com</a>, licensed under a
             <a href="http://creativecommons.org/licenses/by-nc/4.0/">
-              Creative Commons Attribution-NonCommercial 4.0 International License
+              Creative Commons Attribution-NonCommercial 4.0 International License.
             </a>
           </li>
         </ul>
