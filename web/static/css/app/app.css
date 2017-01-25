@@ -721,7 +721,7 @@
     background: #fff;
     outline: 0;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     text-align: right;
     visibility: visible;
     z-index: 10000;
