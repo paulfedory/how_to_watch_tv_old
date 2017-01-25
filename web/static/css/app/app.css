@@ -713,7 +713,7 @@
     -webkit-transition: opacity 0.75s ease, right 0.75s ease, left 0.75s ease, visibility 0.75s;
     -ms-transition: opacity 0.75s ease, right 0.75s ease, left 0.75s ease, visibility 0.75s;
     transition: opacity 0.75s ease, right 0.75s ease, left 0.75s ease, visibility 0.75s;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: auto;
     position: fixed;
     top: 0;
     width: 22.5em;
@@ -721,7 +721,7 @@
     background: #fff;
     outline: 0;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     text-align: right;
     visibility: visible;
     z-index: 10000;
