@@ -10,6 +10,8 @@ defmodule HowToWatchTv.Recommendation do
     field :tvdb_id, :string
     field :image_binary, :binary
     field :thumbnail_binary, :binary
+    field :image_binary_type, :string
+    field :thumbnail_binary_type, :string
 
     timestamps()
   end
@@ -27,7 +29,9 @@ defmodule HowToWatchTv.Recommendation do
         :image_url,
         :thumbnail_url,
         :image_binary,
-        :thumbnail_binary
+        :thumbnail_binary,
+        :image_binary_type,
+        :thumbnail_binary_type
       ])
     |> validate_required([:name, :tvdb_id])
   end

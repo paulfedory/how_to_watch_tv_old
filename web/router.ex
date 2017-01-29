@@ -22,8 +22,8 @@ defmodule HowToWatchTv.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/image/:id_ext", PageController, :image
-    get "/thumbnail/:id_ext", PageController, :thumbnail
+    get "/image/:id", PageController, :image
+    get "/thumbnail/:id", PageController, :thumbnail
   end
 
   scope "/admin", HowToWatchTv do

@@ -22,16 +22,21 @@ defmodule HowToWatchTv.ImageFetcher do
   def init(_), do: {:ok, []}
 
   def handle_cast({:image, recommendation}, _state) do
-    %HTTPoison.Response{body: image} = HTTPoison.get!(recommendation.image_url)
-    Recommendation.changeset(recommendation, %{"image_binary" => image})
+    %HTTPoison.Response{body: image, headers: headers} = HTTPoison.get!(recommendation.image_url)
+    Recommendation.changeset(recommendation, %{"image_binary" => image, "image_binary_type" => get_content_type(headers)})
     |> Repo.update!
     {:noreply, []}
   end
 
   def handle_cast({:thumbnail, recommendation}, _state) do
-    %HTTPoison.Response{body: image} = HTTPoison.get!(recommendation.thumbnail_url)
-    Recommendation.changeset(recommendation, %{"thumbnail_binary" => image})
+    %HTTPoison.Response{body: image, headers: headers} = HTTPoison.get!(recommendation.thumbnail_url)
+    Recommendation.changeset(recommendation, %{"thumbnail_binary" => image, "thumbnail_binary_type" => get_content_type(headers)})
     |> Repo.update!
     {:noreply, []}
+  end
+
+  defp get_content_type(headers) do
+    header_map = headers |> Map.new
+    header_map["Content-Type"]
   end
 end
