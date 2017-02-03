@@ -5,16 +5,17 @@ defmodule BasicAuth do
 
   def init(opts), do: opts
 
-  def call(conn, [username: username, password: password]) do
+  def call(conn, correct_auth_details) do
     case get_req_header(conn, "authorization") do
-      ["Basic " <> auth] ->
-        if auth == encode(username, password) do
-          conn
-        else
-          unauthorized(conn)
-        end
-      _ ->
-        unauthorized(conn)
+      ["Basic " <> auth] -> verify(conn, auth, correct_auth_details)
+      _                  -> unauthorized(conn)
+    end
+  end
+
+  defp verify(conn, attempted_auth, [username: username, password: password]) do
+    case encode(username, password) do
+      ^attempted_auth -> conn
+      _               -> unauthorized(conn)
     end
   end
 
