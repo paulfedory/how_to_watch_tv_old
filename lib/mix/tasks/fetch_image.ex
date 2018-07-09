@@ -21,8 +21,8 @@ defmodule Mix.Tasks.FetchImage do
 
   def fetch_image(rec) do
     Mix.shell.info rec.name
-    %HTTPoison.Response{body: image} = HTTPoison.get!(rec.image_url)
-    %HTTPoison.Response{body: thumbnail} = HTTPoison.get!(rec.thumbnail_url)
+    %HTTPoison.Response{body: image} = HTTPoison.get!(rec.image_url, [], [{:follow_redirect, true}])
+    %HTTPoison.Response{body: thumbnail} = HTTPoison.get!(rec.thumbnail_url, [], [{:follow_redirect, true}])
     changeset = Recommendation.changeset(rec, %{"image_binary" => image, "thumbnail_binary" => thumbnail})
     Repo.update!(changeset)
   end
